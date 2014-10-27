@@ -1,13 +1,12 @@
 # Copyright Emanuele Olivetti 2014, BSD license, 3 clauses.
+# This script iterates through an array of alpha values and returns which one
+# resulted in the highest accuracy classifier.
 
-# import numpy
 import numpy as np
-# import the LogisticRegression module
 from sklearn.linear_model import SGDClassifier
 from sklearn.preprocessing import StandardScaler
 from sklearn.cross_validation import train_test_split
 from sklearn.cross_validation import cross_val_score
-# import the loadmat module for loading the data
 from scipy.io import loadmat
 from sklearn.utils import shuffle
 from sklearn.svm import SVC

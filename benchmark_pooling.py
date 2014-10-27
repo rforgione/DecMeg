@@ -38,12 +38,6 @@ if __name__ == '__main__':
     X_all = []
     y_all = []
 
-    X_train = []
-    y_train = []
-
-    X_cv = []
-    y_cv = []
-
     X_test = []
     ids_test = []
 
@@ -66,8 +60,6 @@ if __name__ == '__main__':
     y_all = np.concatenate(y_all)
 
     print X_all
-
-    # X_train, X_cv, y_train, y_cv = train_test_split(X_all_rand, y_all_rand, train_size=0.6)
 
     print "Importing test data."
     for subject in test_subjects:
@@ -106,6 +98,8 @@ if __name__ == '__main__':
 
     alpha_performance = 'alpha_performance.csv'
     cf = open(alpha_performance, 'a')
+    # write to the alpha performance data file with the alpha value, the train set score,
+    # and the cv score
     print >> cf, str(clf.alpha) + "," + str(train_score) + "," + str(cv_score.mean())
     cf.close()
 
