@@ -1,10 +1,13 @@
-# import numpy
+# This script imports our training data and uses it to construct a 
+# create a classification model using the stochastic gradient descent
+# algorithm.
+
+
 import numpy as np
 from sklearn.linear_model import SGDClassifier
 from sklearn.preprocessing import StandardScaler
 from sklearn.cross_validation import train_test_split
 from sklearn.cross_validation import cross_val_score
-            
 from scipy.io import loadmat
 from sklearn.utils import shuffle
 from sklearn.svm import SVC
@@ -96,10 +99,11 @@ if __name__ == '__main__':
     cv_score = cross_val_score(clf, X_all, y_all, cv=5)
     print("Accuracy: %0.2f (+/- %0.2f)" % (cv_score.mean(), cv_score.std() * 2))
 
-    alpha_performance = 'alpha_performance.csv'
+    alpha_performance = "alpha_performance.csv"
     cf = open(alpha_performance, 'a')
     # write to the alpha performance data file with the alpha value, the train set score,
-    # and the cv score
+    # and the cv score. Comment out the following lines if you do not want to store data
+    # on alpha performance.
     print >> cf, str(clf.alpha) + "," + str(train_score) + "," + str(cv_score.mean())
     cf.close()
 
