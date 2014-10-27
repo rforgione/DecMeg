@@ -1,6 +1,5 @@
-# This script imports our training data and uses it to construct a 
-# create a classification model using the stochastic gradient descent
-# algorithm.
+# This script imports our training data and uses it to create a classification 
+# model using the stochastic gradient descent algorithm.
 
 
 import numpy as np
